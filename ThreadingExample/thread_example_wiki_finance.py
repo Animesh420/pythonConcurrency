@@ -2,12 +2,11 @@ import time
 
 from workers.wiki_worker import WikiWorker
 from workers.yahoo_finance_price_worker import YahooFinancePriceWorker
-import time
-from multiprocessing import Queue
+
 
 def main():
-
     scrapper_start_time = time.time()
+
     wikiWorker = WikiWorker()
     thread_list = []
     for symbol in wikiWorker.get_sp_500_companies():
